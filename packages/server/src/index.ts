@@ -5,29 +5,13 @@ import cors from 'cors';
 import { json } from 'body-parser';
 import { gql } from '@apollo/client/core';
 import { IResolvers } from "@graphql-tools/utils";
+import schema from "./graphql/schema";
 
-const typeDefs = gql`
-    type Query {
-        message: String!
-        }
-    `;
-
-const resolvers: IResolvers = {
-    Query: {
-        message: () => 'It works!'
-    }
-};
-
-const config = {
-    typeDefs: typeDefs,
-    resolvers: resolvers
-}
-
-async function startApolloServer(config: any) {
+async function startApolloServer() {
     const PORT = 8080;
     const app: Application = express();
 
-    const server: ApolloServer = new ApolloServer(config);
+    const server: ApolloServer = new ApolloServer({schema});
 
     await server.start()
     server.assertStarted('expressMiddleware()');
@@ -38,4 +22,4 @@ async function startApolloServer(config: any) {
     })
 }
 
-startApolloServer(config);
+startApolloServer();
