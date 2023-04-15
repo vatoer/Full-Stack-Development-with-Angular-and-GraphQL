@@ -5,12 +5,12 @@ import { gql } from '@apollo/client/core';
 import resolvers from './resolvers';
 
 const typeDefs = gql`
-    ${fs.readFileSync(__dirname.concat('/schema.graphql'), 'utf8')}
+  ${fs.readFileSync(__dirname.concat('/schema.graphql'), 'utf8')}
 `;
 
 const schema: GraphQLSchema = makeExecutableSchema({
-    typeDefs,
-    resolvers,
-})
+  typeDefs,
+  resolvers
+});
 
 export default schema;

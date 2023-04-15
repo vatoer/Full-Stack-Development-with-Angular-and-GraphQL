@@ -6,6 +6,8 @@
   "scripts": {
     "start": "ts-node-dev --respawn ./src",
     "build": "tsc --project ./",
+    "lint": "eslint . --ext .ts",
+    "prettier-format": "prettier --config .prettierrc ./src --ext .ts --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -5,7 +5,11 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^6.6.1"
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.38.0",
+    "lerna": "^6.6.1",
+    "prettier": "^2.8.7"
   },
   "version": "0.0.1"
 }
